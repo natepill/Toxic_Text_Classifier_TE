@@ -1,47 +1,82 @@
 # Toxic Text Classification Report
 {Objective} percentages of toxicity
 
-## Data, Preprocessing, Constants, Resources
+{link to Google Colab (view only)}
+
+## Data and Preprocessing
 Google Colab GPU usage
 
 - Data shape
-- Data columns ---> Data sliced
+Toxic: 15294
+Non-Toxic: 144277
+
+Feature Columns:
+- toxic
+- severe_toxic
+- obscene
+- threat
+- insult
+- identity_hate
+
+Since the objective is simply to identify the percentage of how toxic a piece of text is, the the only feature column that is needed is "toxic". The pieces of texts that are classified as True for any of the other forms of toxicity are also classified as True under Toxic. For example if a piece of text is classified as "severe_toxic" or "threat", it is also classified as True for "Toxic".
+
+
 - Upsampling vs Downsampling
+
+Since there is extreme class imbalance in the given dataset (15294(Toxic): 144277(Non-Toxic)), the data is in need of resampling. For the purpose of saving times the following model architectures were trained on a downsampled majority class as opposed to an upsampled minority class.
+
+After downsampling the number of non-toxic texts and splitting the data into training and test partitions:
+
+Class distribution: 11393:11393
+
+
 - Keras tokenizer
 - Texts_to_sequences
 - Padding
-- Glove with 300D
-
-max_features=
-maxlen=
-embed_size=
+- Glove with 300D: http://nlp.stanford.edu/data/glove.6B.zip
 
 
-{link to Google Colab (view only)}
+## Constants
+
+max_features =
+maxlen = 150
+embed_size = 300
+
 
 
 ## Model Architecture
 
+Image: ![Attention Mechanism](https://www.tensorflow.org/images/seq2seq/attention_mechanism.jpg)
 
-### Simple LSTM (Baseline)
 
-### LSTM with MaxPooling
+### Simple LSTM
 
-### LSTM with Attention
-Andrew NG ATNN: https://www.youtube.com/watch?v=SysgYptB198
-ATTN: https://www.youtube.com/watch?v=oaV_Fv5DwUM
+### Bi-LSTM with MaxPooling
+
+Relevant Paper: https://arxiv.org/pdf/1611.06639v1.pdf
+- Paper mentions getting prior results from applying GlobalMaxPooling1D or an Attention layer after obtaining the contextual state from the Bi-Directional layer
+- Paper mentions potential drawback that "applying 1D pooling operation over
+the time-step dimension independently may destroy the structure of the feature representation"
+
+
+### Bi-LSTM with Attention
+Model implementation based on:
+- Andrew NG : https://www.youtube.com/watch?v=SysgYptB198
+- Shuyi Wang: https://www.youtube.com/watch?v=oaV_Fv5DwUM
+
+
+
 debugging: https://github.com/keras-team/keras/issues/4962
 
 
 ### C-LSTM
-
+https://medium.com/@mrunal68/text-sentiments-classification-with-cnn-and-lstm-f92652bc29fd
 Paper on C-LSTM: https://arxiv.org/abs/1511.08630
 
 
 ### CNN
 - http://www.davidsbatista.net/blog/2018/03/31/SentenceClassificationConvNets/
 - Globalmaxpooling vs maxpooling layer https://stats.stackexchange.com/questions/257321/what-is-global-max-pooling-layer-and-what-is-its-advantage-over-maxpooling-layer
-
 
 
 ## Parameter Tuning

@@ -5,11 +5,10 @@ Kaggle Competition: https://www.kaggle.com/c/jigsaw-toxic-comment-classification
 Link to Google Colab Notebook (view-only): https://colab.research.google.com/drive/1GukAgm5Hgtz-qiZhYtrJQRSOluJ2croE
 
 ## Data and Preprocessing
-Google Colab GPU usage
 
-- Data shape
-Toxic: 15294
-Non-Toxic: 144277
+Data shape:
+- Toxic: 15294
+- Non-Toxic: 144277
 
 Feature Columns:
 - toxic
@@ -22,13 +21,13 @@ Feature Columns:
 Since the objective is simply to identify the percentage of how toxic a piece of text is, the the only feature column that is needed is "toxic". The pieces of texts that are classified as True for any of the other forms of toxicity are also classified as True under Toxic. This means that if a piece of text is classified as "severe_toxic" or "threat", it is also classified as True for "Toxic".
 
 
-- Upsampling vs Downsampling
+Upsampling vs Downsampling
 
-Since there is extreme class imbalance in the given dataset (15294(Toxic): 144277(Non-Toxic)), the data is in need of resampling. For the purpose of saving times the following model architectures were trained on a downsampled majority class as opposed to an upsampled minority class.
+- Since there is extreme class imbalance in the given dataset (15294(Toxic): 144277(Non-Toxic)), the data is in need of resampling. For the purpose of saving times the following model architectures were trained on a downsampled majority class as opposed to an upsampled minority class.
 
 After downsampling the number of non-toxic texts and splitting the data into training and test partitions:
 
-Class distribution: 11393:11393
+Binary class distribution: 11393:11393
 
 Preprocessing pipeline used:
 - Keras tokenizer
@@ -87,6 +86,7 @@ Performance:
 - 'f1_score': 0.9038933707471062
 - 'precision_score': 0.8997905027932961
 - 'recall_score': 0.9080338266384778
+- 'roc_auc_score': 0.9041070185985876
 
 
 ### CNN

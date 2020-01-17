@@ -1,7 +1,8 @@
 # Toxic Text Classification Report
-{Objective} percentages of toxicity
-{link to Kaggle Competition}
-{link to Google Colab Notebook (view only)}
+
+Objective: Ouput the percentage likelihood that a comment is toxic or not
+Kaggle Competition: https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge
+Link to Google Colab Notebook (view-only): https://colab.research.google.com/drive/1GukAgm5Hgtz-qiZhYtrJQRSOluJ2croE
 
 ## Data and Preprocessing
 Google Colab GPU usage

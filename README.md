@@ -18,7 +18,6 @@ Since the objective is simply to identify the percentage of how toxic a piece of
 
 
 ## Next Steps
-- https://arxiv.org/pdf/1611.06639.pdf#page=10&zoom=100,89,636
 - Training on Upsampling
 - Denser networks
 - Grid Search Parameter tuning across all models

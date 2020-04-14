@@ -12,12 +12,13 @@ Since the objective is simply to identify the percentage of how toxic a piece of
 
 ### Simple LSTM
 
+### Bi-LSTM with Attention Mechanism
 
-### Bi-LSTM with MaxPooling
-
+### Bi-LSTM with CNN
 
 
 ## Next Steps
+- 1st Place Kaggle Competition Solution Overview: https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/discussion/52557
 - Training on Upsampling
 - Denser networks
 - Grid Search Parameter tuning across all models

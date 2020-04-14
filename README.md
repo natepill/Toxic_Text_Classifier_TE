@@ -1,9 +1,8 @@
 # Toxic Text Classification Report
 Link to Report: https://docs.google.com/document/d/1fKOzErfzN-hjsj542BrOv3S-YGs-LaEKKYYcSyLIOTc/edit?usp=sharing
 
-Objective: Ouput the percentage likelihood that a comment is toxic or not
-Kaggle Competition: https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge
-Link to Google Colab Notebook (view-only): https://colab.research.google.com/drive/1GukAgm5Hgtz-qiZhYtrJQRSOluJ2croE
+Link to Google Colab Notebook (view-only):
+https://colab.research.google.com/drive/1GukAgm5Hgtz-qiZhYtrJQRSOluJ2croE
 
 # About the Project
 
